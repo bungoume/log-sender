@@ -1,0 +1,26 @@
+FROM ruby:2.2
+
+RUN gem install fluentd foreman
+
+RUN mkdir -p /etc/fluent/plugins
+COPY plugins /etc/fluent/plugins/
+
+ENV DOCKER_GEN_VERSION 0.4.3
+
+RUN wget https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VERSION/docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz \
+ && tar -C /usr/local/bin -xvzf docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz \
+ && rm /docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz
+
+
+COPY . /app/
+WORKDIR /app/
+
+EXPOSE 10224
+EXPOSE 10514/udp
+EXPOSE 11514/udp
+EXPOSE 12514/udp
+
+ENV DOCKER_HOST unix:///tmp/docker.sock
+ENV TO_HOST logserver.example.com
+
+CMD ["foreman", "start", "-r"]
