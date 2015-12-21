@@ -72,7 +72,7 @@
   flush_interval 1s
 
   buffer_type file
-  buffer_path /var/log/td-agent/buffer/forward_access.buf
+  buffer_path /data/buffer/forward_access.buf
 
   <server>
     host {{ $.Env.TO_HOST }}
