@@ -2,8 +2,8 @@ FROM ruby:2.2
 
 RUN gem install fluentd foreman
 
-RUN mkdir -p /etc/fluent/plugins && mkdir -p /data/buffer
-COPY plugins /etc/fluent/plugins/
+RUN mkdir -p /etc/fluent/plugin && mkdir -p /data/buffer
+COPY plugin /etc/fluent/plugin/
 
 ENV DOCKER_GEN_VERSION 0.4.3
 
