@@ -20,5 +20,5 @@ sudo docker build -t bungoume/log-sender .
 set ENV `TO_HOST=<log_aggregator_host>`
 
 ```
-sudo docker run -e "TO_HOST=logserver.example.com" -v /var/run/docker.sock:/tmp/docker.sock:ro -d bungoume/log-sender
+sudo docker run -e "TO_HOST=logserver.example.com" -v /var/run/docker.sock:/var/run/docker.sock:ro -d bungoume/log-sender
 ```

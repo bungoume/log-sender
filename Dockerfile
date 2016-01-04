@@ -20,7 +20,7 @@ EXPOSE 10514/udp
 EXPOSE 11514/udp
 EXPOSE 12514/udp
 
-ENV DOCKER_HOST unix:///tmp/docker.sock
+ENV DOCKER_HOST unix:///var/run/docker.sock
 ENV TO_HOST logserver.example.com
 
 CMD ["foreman", "start"]
