@@ -79,6 +79,7 @@
   @type record_transformer
   <record>
     server_name ${hostname}
+    app_name {{ $.Env.APP_NAME }}
   </record>
 </filter>
 
