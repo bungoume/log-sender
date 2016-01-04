@@ -49,6 +49,27 @@
   tag access.uwsgi
 </source>
 
+<source>
+  @type tail
+  format ltsv
+  path /var/log/nginx/access.log
+  time_key time
+  time_format %Y-%m-%dT%H:%M:%S%z
+  tag access.nginx
+  pos_file /data/pos/nginx_access.pos
+</source>
+
+# nginx error log
+<source>
+  @type tail
+  path /var/log/nginx/error.log
+  tag alert.nginx
+  format /^(?<time>[^ ]+ [^ ]+) \[(?<level>[^\]]+)\] (?<message>.*)$/
+  time_key time
+  time_format %Y/%m/%d %H:%M:%S
+  pos_file /data/pos/nginx_error.pos
+</source>
+
 
 # ------------------
 # Filters
