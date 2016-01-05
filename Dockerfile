@@ -22,5 +22,6 @@ EXPOSE 12514/udp
 
 ENV DOCKER_HOST unix:///var/run/docker.sock
 ENV TO_HOST logserver.example.com
+ENV APP_NAME noname
 
 CMD ["foreman", "start"]
