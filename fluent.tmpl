@@ -96,17 +96,8 @@
   buffer_type file
   buffer_path /data/buffer/forward_access.buf
 
-  <server>
-    host {{ $.Env.TO_HOST }}
-    port 10224
-  </server>
-</match>
-
-<match action.**>
-  @type forward
-  heartbeat_type tcp
-  flush_interval 1s
-  require_ack_response
+  expire_dns_cache 60s
+  dns_round_robin true
 
   <server>
     host {{ $.Env.TO_HOST }}
@@ -114,11 +105,14 @@
   </server>
 </match>
 
-<match alert.**>
+<match *.**>
   @type forward
   heartbeat_type tcp
   flush_interval 1s
   require_ack_response
+
+  expire_dns_cache 60s
+  dns_round_robin true
 
   <server>
     host {{ $.Env.TO_HOST }}
