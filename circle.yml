@@ -12,7 +12,7 @@ dependencies:
     - docker build -t bungoume/log-sender .
     # - mkdir -p ~/cache; docker save bungoume/log-sender > ~/cache/image_$CIRCLE_BRANCH_HASH.tar
     # - find ~/cache -type f -mtime +1 -delete
-    - docker run -d -p 10224:10224 -e TO_HOST=192.0.2.0 bungoume/log-sender
+    - docker run -d -v /var/run/docker.sock:/var/run/docker.sock:ro -p 10224:10224 -e TO_HOST=192.0.2.0 bungoume/log-sender
 
 test:
   override:
