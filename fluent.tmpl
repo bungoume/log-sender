@@ -18,13 +18,13 @@
 # From syslog
 # ------------------
 
-# <source>
-#   @type udp
-#   tag alert.allmessages
-#   port 10514
-#   format /^(?<time>[^ ]*) (?<facility>\w*).(?<level>[^ ]*) (?<ident>[a-zA-Z0-9_\/\.\-]*)(?:\[(?<pid>[0-9]+)\])?[^\:]*\: *(?<message>.*)$/
-#   time_format %FT%T.%L%:z
-# </source>
+<source>
+  @type udp
+  tag alert.allmessages
+  port 10514
+  format /^(?<time>[^ ]*) (?<facility>\w*).(?<level>[^ ]*) (?<ident>[a-zA-Z0-9_\/\.\-]*)(?:\[(?<pid>[0-9]+)\])?[^\:]*\: *(?<message>.*)$/
+  time_format %FT%T.%L%:z
+</source>
 
 
 # ------------------
