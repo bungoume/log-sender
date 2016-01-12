@@ -75,7 +75,7 @@
   @type tail
   path /data/log/nginx_error.log
   tag alert.nginx
-  format /^(?<time>[^ ]+ [^ ]+) \[(?<level>[^\]]+)\] (?<message>.*)$/
+  format /^(?<time>[^ ]+ [^ ]+) \[(?<level>[^\]]+)\] (?<pid>\d*).(?<tid>[^:]*): (?<message>.*)$/
   time_key time
   time_format %Y/%m/%d %H:%M:%S
   pos_file /data/pos/nginx_error.pos
