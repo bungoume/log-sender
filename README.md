@@ -10,6 +10,7 @@ Input
   * /data/log/nginx_access.log
   * /data/log/nginx_error.log
   * /data/log/uwsgi_access.log
+  * /data/log/nodejs_access.log
 * application
   * 10224,24224: actionlog
 
