@@ -63,6 +63,16 @@
 <source>
   @type tail
   format ltsv
+  path /data/log/nodejs_access.log
+  time_key time
+  time_format %Y-%m-%dT%H:%M:%S.%L%z
+  tag access.nodejs
+  pos_file /data/pos/nodejs_access.pos
+</source>
+
+<source>
+  @type tail
+  format ltsv
   path /data/log/nginx_access.log
   time_key time
   time_format %Y-%m-%dT%H:%M:%S%z
