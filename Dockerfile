@@ -6,7 +6,7 @@ RUN gem install fluentd -v "~> 0.14.0" && \
 RUN mkdir -p /etc/fluent/plugin && mkdir -p /data/buffer && mkdir /data/pos && mkdir /data/log
 COPY plugin /etc/fluent/plugin/
 
-ENV DOCKER_GEN_VERSION 0.5.0
+ENV DOCKER_GEN_VERSION 0.7.3
 
 RUN wget https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VERSION/docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz \
  && tar -C /usr/local/bin -xvzf docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz \
