@@ -1,6 +1,7 @@
 FROM ruby:2.3
 
-RUN gem install fluentd foreman
+RUN gem install fluentd -v "~> 0.14.0" && \
+    gem install foreman
 
 RUN mkdir -p /etc/fluent/plugin && mkdir -p /data/buffer && mkdir /data/pos && mkdir /data/log
 COPY plugin /etc/fluent/plugin/
