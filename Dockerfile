@@ -8,7 +8,7 @@ RUN apk --no-cache --update add \
                             ruby-irb \
                             ruby-dev && \
     echo 'gem: --no-document' >> /etc/gemrc && \
-    gem install oj json foreman && \
+    gem install oj json foreman io-console && \
     gem install fluentd -v "~> 0.14.0" && \
     apk del build-base ruby-dev && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /usr/lib/ruby/gems/*/cache/*.gem
