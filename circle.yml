@@ -6,7 +6,8 @@ dependencies:
   override:
     - docker info
     - docker build -t bungoume/log-sender .
-    - docker run -d -v /var/run/docker.sock:/run/docker.sock:ro -p 10224:10224 -e "TO_HOST=192.0.2.0 DOCKER_HOST=unix:///run/docker.sock" bungoume/log-sender
+    - docker run -d -p 10224:10224 -e "TO_HOST=192.0.2.0 DOCKER_HOST=unix:///run/docker.sock" --name log-sender bungoume/log-sender
+    - docker logs log-sender
 
 test:
   override:

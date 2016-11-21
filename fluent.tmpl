@@ -100,7 +100,7 @@
   @type record_transformer
   <record>
     server_name ${hostname}
-    app_name {{ $.Env.APP_NAME }}
+    app_name {{ .Env.APP_NAME }}
   </record>
 </filter>
 
@@ -121,7 +121,7 @@
   dns_round_robin true
 
   <server>
-    host {{ $.Env.TO_HOST }}
+    host {{ .Env.TO_HOST }}
     port 10224
   </server>
 </match>
@@ -136,7 +136,7 @@
   dns_round_robin true
 
   <server>
-    host {{ $.Env.TO_HOST }}
+    host {{ .Env.TO_HOST }}
     port 10224
   </server>
 </match>
