@@ -63,6 +63,16 @@
 <source>
   @type tail
   format ltsv
+  path /data/log/gunicorn_access.log
+  time_key time
+  time_format %Y-%m-%dT%H:%M:%S.%L%z
+  tag access.gunicorn
+  pos_file /data/pos/gunicorn_access.pos
+</source>
+
+<source>
+  @type tail
+  format ltsv
   path /data/log/nodejs_access.log
   time_key time
   time_format %Y-%m-%dT%H:%M:%S.%L%z
