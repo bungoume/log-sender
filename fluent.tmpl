@@ -1,13 +1,4 @@
 # ------------------
-# System config
-# ------------------
-
-<system>
-  root_dir /data/buffer
-</system>
-
-
-# ------------------
 # from application
 # (actionlog, etc)
 # ------------------
@@ -129,18 +120,13 @@
 # ------------------
 
 <match access.**>
-  @id forward_access
   @type forward
   time_as_integer true
   heartbeat_type tcp
-  require_ack_response true
+  flush_interval 1s
 
-  <buffer>
-    @type file
-    flush_interval 1s
-    chunk_limit_size 8m
-    total_limit_size 4g
-  </buffer>
+  buffer_type file
+  buffer_path /data/buffer/forward_access.buf
 
   expire_dns_cache 60s
   dns_round_robin true
@@ -152,18 +138,11 @@
 </match>
 
 <match *.**>
-  @id forward_any
   @type forward
   time_as_integer true
   heartbeat_type tcp
-  require_ack_response true
-
-  <buffer>
-    @type file
-    flush_interval 1s
-    chunk_limit_size 8m
-    total_limit_size 4g
-  </buffer>
+  flush_interval 1s
+  require_ack_response
 
   expire_dns_cache 60s
   dns_round_robin true
