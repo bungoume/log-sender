@@ -128,6 +128,7 @@
   buffer_type file
   buffer_path /data/buffer/forward_access.buf
 
+  expire_dns_cache 60s
   dns_round_robin true
 
   <server>
@@ -143,6 +144,7 @@
   flush_interval 1s
   require_ack_response
 
+  expire_dns_cache 60s
   dns_round_robin true
 
   <server>
