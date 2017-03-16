@@ -103,6 +103,22 @@
 
 
 # ------------------
+# audit_log
+# ------------------
+
+<source>
+  @type tail
+  format json
+  path /var/log/osquery/osqueryd.results.log
+  tag audit.osquery
+  time_key calendarTime
+  time_format %a %b %d %H:%M:%S %Y %Z
+  pos_file /data/pos/osqueryd_results.pos
+</source>
+
+
+
+# ------------------
 # Filters
 # ------------------
 
@@ -119,7 +135,7 @@
 # Forward
 # ------------------
 
-<match access.**>
+<match {access,audit}.**>
   @type forward
   time_as_integer true
   heartbeat_type tcp
