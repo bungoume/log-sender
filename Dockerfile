@@ -3,6 +3,7 @@ FROM alpine:3.6
 RUN apk --no-cache --update add \
                             build-base \
                             ca-certificates \
+                            libressl \
                             ruby \
                             ruby-irb \
                             ruby-dev && \
