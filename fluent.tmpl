@@ -151,11 +151,13 @@
   heartbeat_interval 1s
   require_ack_response true
 
-  <buffer>
+  <buffer tag>
     @type file
+    chunk_limit_size 32m
+    total_limit_size 2g
+    flush_at_shutdown true
+    flush_mode interval
     flush_interval 1s
-    chunk_limit_size 8m
-    total_limit_size 4g
   </buffer>
 
   expire_dns_cache 60s
