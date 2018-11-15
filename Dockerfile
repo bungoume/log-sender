@@ -10,6 +10,7 @@ RUN apk --no-cache --update add \
     echo 'gem: --no-document' >> /etc/gemrc && \
     gem install oj json && \
     gem install fluentd -v 1.2.5 && \
+    gem install fluent-plugin-beats && \
     apk del build-base ruby-dev && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /usr/lib/ruby/gems/*/cache/*.gem
 
