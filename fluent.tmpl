@@ -51,25 +51,6 @@
 # ------------------
 
 <source>
-  @type udp
-  port 11514
-  format ltsv
-  time_key time
-  time_format %Y-%m-%dT%H:%M:%S%z
-  tag access.nginx
-</source>
-
-<source>
-  @type udp
-  port 12514
-  format ltsv
-  time_key time
-  time_format %d/%b/%Y:%H:%M:%S %z
-  tag access.uwsgi
-</source>
-
-
-<source>
   @type tail
   format ltsv
   path /data/log/uwsgi_access.log
