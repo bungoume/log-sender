@@ -29,8 +29,6 @@ WORKDIR /app/
 
 EXPOSE 10224
 EXPOSE 10514/udp
-EXPOSE 11514/udp
-EXPOSE 12514/udp
 EXPOSE 5044
 
 ENV TO_HOST logserver.example.com
