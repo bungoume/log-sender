@@ -1,9 +1,9 @@
-FROM alpine:3.7
+FROM alpine:3.9
 
 RUN apk --no-cache --update add \
                             build-base \
                             ca-certificates \
-                            libressl \
+                            openssl \
                             ruby \
                             ruby-irb \
                             ruby-dev && \
