@@ -1,0 +1,28 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: build image
+          command: docker build -t bungoume/log-sender .
+      - run:
+          name: Test
+          command: |
+            docker run -d --name log-sender -e TO_HOST=192.0.2.0 bungoume/log-sender
+      - run:
+          name: Test listen at TCP10224
+          command: |
+            docker exec -t log-sender sh -c "nc -vz -w5 localhost 10224"
+      - run:
+          name: Send sample log
+          command: |
+            docker exec -t log-sender sh -c "echo '{\"client_ip\":\"93.184.216.34\",\"upstream_taken_time\":0.01}' | fluent-cat -p 10224 access.nginx"
+      - run:
+          name: Check send log
+          command: |
+            docker logs log-sender
