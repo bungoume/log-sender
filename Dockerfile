@@ -7,6 +7,7 @@ RUN apk --no-cache --update add \
                             ruby \
                             ruby-irb \
                             ruby-etc \
+                            ruby-webrick \
                             ruby-dev && \
     echo 'gem: --no-document' >> /etc/gemrc && \
     gem install oj json && \
