@@ -1,11 +1,13 @@
-FROM alpine:3.7
+FROM alpine:3.9
 
 RUN apk --no-cache --update add \
                             build-base \
                             ca-certificates \
-                            libressl \
+                            openssl \
                             ruby \
                             ruby-irb \
+                            ruby-etc \
+                            ruby-webrick \
                             ruby-dev && \
     echo 'gem: --no-document' >> /etc/gemrc && \
     gem install oj json && \
