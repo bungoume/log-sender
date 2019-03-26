@@ -6,6 +6,7 @@ RUN apk --no-cache --update add \
                             openssl \
                             ruby \
                             ruby-irb \
+                            ruby-etc \
                             ruby-dev && \
     echo 'gem: --no-document' >> /etc/gemrc && \
     gem install oj json && \
