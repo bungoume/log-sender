@@ -15,6 +15,12 @@ jobs:
           command: |
             docker run -d --name log-sender -e TO_HOST=192.0.2.0 bungoume/log-sender
       - run:
+          name: check boot log
+          command: |
+            # waiting to boot fluentd
+            sleep 5
+            docker logs log-sender
+      - run:
           name: Test listen at TCP10224
           command: |
             docker exec -t log-sender sh -c "nc -vz -w5 localhost 10224"
