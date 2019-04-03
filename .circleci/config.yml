@@ -3,10 +3,11 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.7.2
+      - image: circleci/python:3.7.3
     steps:
       - checkout
-      - setup_remote_docker
+      - setup_remote_docker:
+          version: 18.09.3
       - run:
           name: build image
           command: docker build -t bungoume/log-sender .
