@@ -12,7 +12,7 @@ jobs:
           version: 18.09.3
       - run:
           name: build image
-          command: docker build -t bungoume/log-sender .
+          command: docker build --progress plain -t bungoume/log-sender .
       - run:
           name: Test
           command: |
