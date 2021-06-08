@@ -1,18 +1,23 @@
-version: 2
+version: 2.1
 
 jobs:
   build:
     environment:
       DOCKER_BUILDKIT: 1
     docker:
-      - image: circleci/python:3.7.3
+      - image: cimg/python:3.9
     steps:
       - checkout
       - setup_remote_docker:
-          version: 18.09.3
+          version: 20.10.2
       - run:
           name: build image
-          command: docker build --progress plain -t bungoume/log-sender .
+          environment:
+            DOCKER_BUILDKIT: 1
+          command: |
+            docker build \
+              --progress plain \
+              --tag bungoume/log-sender .
       - run:
           name: Test
           command: |
