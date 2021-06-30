@@ -1,6 +1,6 @@
 FROM fluent/fluent-bit:1.7
 
-RUN -p mkdir /data/log
+RUN mkdir -p /data/log
 
 COPY fluent-bit.conf /app/fluent-bit.conf
 
