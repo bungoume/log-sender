@@ -12,8 +12,6 @@ Input
   * /data/log/nodejs_access.log
 * application
   * 10224,24224: actionlog
-* beats
-  * 5044: beats
 
 ## build
 
