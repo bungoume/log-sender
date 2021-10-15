@@ -1,4 +1,4 @@
-FROM fluent/fluent-bit:1.7
+FROM fluent/fluent-bit:1.8
 
 COPY fluent-bit.conf /fluent-bit/etc/fluent.conf
 COPY myparsers.conf /fluent-bit/etc/myparsers.conf
