@@ -1,4 +1,5 @@
-name: build-docker-image
+---
+name: build-tag-docker-image
 
 on:
   push:

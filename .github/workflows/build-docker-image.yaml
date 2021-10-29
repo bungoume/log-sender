@@ -1,4 +1,5 @@
-name: build-docker-image
+---
+name: build-latest-docker-image
 
 on:
   push:
