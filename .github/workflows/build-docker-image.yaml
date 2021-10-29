@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - 'master'
-      - 'add-buiild-image'
+      - 'add-build-image'
 
 jobs:
   docker:
