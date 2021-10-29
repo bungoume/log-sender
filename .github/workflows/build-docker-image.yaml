@@ -25,6 +25,7 @@ jobs:
         with:
           images: bungoume/log-sender-test
           tags: |
+            type=edge
             type=semver,pattern={{raw}}
             type=semver,pattern=v{{major}}
           flavor: |
