@@ -25,7 +25,7 @@ jobs:
         with:
           images: bungoume/log-sender-test
           tags: |
-            type=edge
+            type=raw,enable=${{ github.ref == 'refs/heads/master' }},value=latest
             type=semver,pattern={{raw}}
             type=semver,pattern=v{{major}}
           flavor: |
