@@ -25,11 +25,9 @@ jobs:
         with:
           images: bungoume/log-sender-test
           tags: |
-            type=raw,enable=${{ github.ref == 'refs/heads/master' }},value=latest
+            type=edge
             type=semver,pattern={{raw}}
             type=semver,pattern=v{{major}}
-          flavor: |
-            latest=${{ github.ref == 'refs/heads/master' }}
       - 
         name: Login to DockerHub
         uses: docker/login-action@v1
