@@ -23,7 +23,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: bungoume/log-sender-test
+          images: bungoume/log-sender
           tags: |
             type=edge
             type=ref,event=tag
