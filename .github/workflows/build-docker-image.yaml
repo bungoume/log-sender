@@ -27,7 +27,7 @@ jobs:
           tags: |
             type=edge
             type=ref,event=tag
-            type=semver,pattern=v{{major}}
+            type=pep440,pattern=v{{major}}
       - 
         name: Login to DockerHub
         uses: docker/login-action@v1
