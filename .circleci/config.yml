@@ -3,11 +3,10 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/python:3.9
+      - image: cimg/python:3.11
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 20.10.7
+      - setup_remote_docker
       - run:
           name: build image
           environment:
